@@ -1,0 +1,30 @@
+.App
+{
+    height: 100vh;
+    .section
+    {
+        width: 100%;
+        // Height agr 100% deya to overflow kar jayga topBar k waja se kyonke os ko hm fix rakne chahte hai to hm topBar ko minus kar denge
+          height: calc(100vh - 70px);
+         
+        background-color: lightsalmon;
+        position: relative;
+        top: 70px;
+        // scroll-snap-type: y mandatory;
+        // scroll-behavior: smooth; 
+        
+             scroll-snap-type: y proximity;
+        
+        scrollbar-width: none  ;  // for firefox
+         &::-webkit-scrollbar
+         {
+            display: none  ;
+         }
+        > *{
+            width: 100%;
+            height: calc(100vh - 70px);
+            scroll-snap-align: start;
+        }
+    }
+    
+}
